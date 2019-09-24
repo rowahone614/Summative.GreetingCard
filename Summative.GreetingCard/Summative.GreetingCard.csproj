@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Click On-SoundBible.com-1697535117.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Computer Error Alert-SoundBible.com-783113881.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Benjigarner-Softdimension-Windows.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

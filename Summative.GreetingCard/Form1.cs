@@ -21,20 +21,28 @@ namespace Summative.GreetingCard
 
         private void Form1_Shown(object sender, EventArgs e)
         {
+            //Rowan Honeywell - 09/23/19 - Greeting Card
+           
             //Graphics Setup
 
             Graphics g = this.CreateGraphics();
-            Pen buttonPen = new Pen(Color.Cyan);
+            Pen cyanPen = new Pen(Color.Cyan);
+            Pen lightGreenPen = new Pen(Color.LightGreen);
+            Pen redPen = new Pen(Color.Red);
+            Pen yellowPen = new Pen(Color.Yellow);
             SolidBrush drawBrush = new SolidBrush(Color.Cyan);
             Font beginFont = new Font("Courier New", 16, FontStyle.Bold);
             g.Clear(Color.Black);
-            //Open Here Text
+            //Log In Text
+            g.DrawString("Log In", beginFont, drawBrush, 344, 185);
+            //Log In Button
+            g.DrawRectangle(cyanPen, 315, 172, 144, 50);
+            //Log In Screen Design
+            g.DrawRectangle(cyanPen, 315, 240, 40, 40);
+            g.DrawRectangle(lightGreenPen, 350, 240, 40, 40);
+            g.DrawRectangle(yellowPen, 385, 240, 40, 40);
+            g.DrawRectangle(redPen, 420, 240, 40, 40);
 
-            g.DrawString("Open Here", beginFont, drawBrush, 325, 185);
-
-            //Open Here Button
-
-            g.DrawRectangle(buttonPen, 315, 172, 143, 50);
         }
 
         private void Form1_Click(object sender, EventArgs e)
@@ -53,8 +61,11 @@ namespace Summative.GreetingCard
             Pen blackPen = new Pen(Color.Black, 2);
             Font compFont = new Font("Arial", 16, FontStyle.Bold);
             Font windowFont = new Font("Times New Roman", 16, FontStyle.Bold);
+            //Media Sounds
+            SoundPlayer clickSound = new SoundPlayer(Properties.Resources.Click);
+            SoundPlayer errorSound = new SoundPlayer(Properties.Resources.Computer_Error_Alert_SoundBible_com_783113881);
             //DeskTop Setup
-            
+
             //FRAME ONE
 
             //File One
@@ -1459,6 +1470,8 @@ namespace Summative.GreetingCard
             //Cursor Shrinks With Click
             g.FillPie(whiteBrush, 184, 32, 40, 40, 40, 37);
             g.DrawPie(blackPen, 184, 32, 40, 40, 40, 37);
+            //Click Sound
+            clickSound.Play();
 
             //File One
             g.FillRectangle(whiteBrush, 20, 20, 30, 45);
@@ -1615,12 +1628,289 @@ namespace Summative.GreetingCard
             g.FillRectangle(blackBrush, 230, 150, 300, 30);
             g.FillRectangle(redBrush, 500, 150, 30, 30);
             g.DrawString("X", compFont, whiteBrush, 503, 155);
-            g.DrawString("System Error - 1203748", windowFont, whiteBrush, 235, 153);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
             g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
             g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
             g.DrawString("help", windowFont, blackBrush, 460, 280);
             g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            //Error Noise
+            errorSound.Play();
+            Thread.Sleep(2000);
 
+            //FRAME FIFTY ONE
+
+            //Cursor Graphics
+            g.FillPie(whiteBrush, 211, 70, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 211, 70, 50, 50, 40, 37);
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            Thread.Sleep(100);
+            g.Clear(Color.White);
+
+            //FRAME FIFTY TWO
+
+            //Cursor Graphics
+            g.FillPie(whiteBrush, 241, 105, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 241, 105, 50, 50, 40, 37);
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            Thread.Sleep(100);
+            g.Clear(Color.White);
+
+            //FRAME FIFTY THREE
+
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            //Cursor Graphics
+            g.FillPie(whiteBrush, 271, 140, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 271, 140, 50, 50, 40, 37);
+            Thread.Sleep(100);
+            g.Clear(Color.White);
+
+            //FRAME FIFTY FOUR
+
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            //Cursor Graphics
+            g.FillPie(whiteBrush, 301, 175, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 301, 175, 50, 50, 40, 37);
+            Thread.Sleep(100);
+            g.Clear(Color.White);
+
+            //FRAME FIFTY FIVE
+
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            //Cursor Graphics
+            g.FillPie(whiteBrush, 331, 210, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 331, 210, 50, 50, 40, 37);
+            Thread.Sleep(100);
+            g.Clear(Color.White);
+
+            //FRAME FIFTY SIX
+
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            //Cursor Graphics
+            g.FillPie(whiteBrush, 361, 245, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 361, 245, 50, 50, 40, 37);
+            Thread.Sleep(100);
+            g.Clear(Color.White);
+
+            //FRAME FIFTY SEVEN
+
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            //Cursor Graphics
+            g.FillPie(whiteBrush, 391, 270, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 391, 270, 50, 50, 40, 37);
+            Thread.Sleep(100);
+            g.Clear(Color.White);
+
+            //FRAME FIFTY EIGHT
+
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            //Cursor Graphics
+            g.FillPie(whiteBrush, 420, 270, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 420, 270, 50, 50, 40, 37);
+            Thread.Sleep(100);
+            g.Clear(Color.White);
+
+            //FRAME FIFTY NINE
+
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            //Cursor Graphics
+            g.FillPie(whiteBrush, 440, 270, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 440, 270, 50, 50, 40, 37);
+            Thread.Sleep(100);
+            g.Clear(Color.White);
+
+            //FRAME SIXTY
+
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            //Cursor Shrinks With Click
+            g.FillPie(whiteBrush, 440, 270, 40, 40, 40, 37);
+            g.DrawPie(blackPen, 440, 270, 40, 40, 40, 37);
+            //Click Sound
+            clickSound.Play();
+            Thread.Sleep(300);
+            g.Clear(Color.White);
+
+            //FRAME SIXTY ONE
+
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("System Error - 4629046290", windowFont, whiteBrush, 235, 153);
+            g.DrawString("could not load file:", windowFont, blackBrush, 235, 193);
+            g.DrawString("GreetingCard.mp4", windowFont, blackBrush, 235, 233);
+            g.DrawString("help", windowFont, blackBrush, 460, 280);
+            g.DrawRectangle(blackPen, 455, 278, 56, 32);
+            //Cursor Grows With Click
+            g.FillPie(whiteBrush, 440, 270, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 440, 270, 50, 50, 40, 37);
+            Thread.Sleep(2000);
+            g.Clear(Color.White);
+
+            //FRAME SIXTY TWO
+
+            //Task Bar Graphics
+            g.FillRectangle(blackBrush, 0, 0, 800, 30);
+            g.FillRectangle(redBrush, 760, 0, 40, 30);
+            g.DrawString("X", compFont, whiteBrush, 767, 5);
+            //Error Window Graphics
+            g.FillRectangle(grayBrush, 230, 150, 300, 170);
+            g.DrawRectangle(blackPen, 230, 150, 300, 170);
+            g.FillRectangle(blackBrush, 230, 150, 300, 30);
+            g.FillRectangle(redBrush, 500, 150, 30, 30);
+            g.DrawString("X", compFont, whiteBrush, 503, 155);
+            g.DrawString("no", windowFont, blackBrush, 350, 233);
+            //Cursor Graphics
+            g.FillPie(whiteBrush, 440, 270, 50, 50, 40, 37);
+            g.DrawPie(blackPen, 440, 270, 50, 50, 40, 37);
+            //Error Sound
+            errorSound.Play();
+            
         }
 
     }
